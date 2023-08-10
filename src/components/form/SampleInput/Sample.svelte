@@ -6,7 +6,10 @@
   on:DELETE
 >
   <fieldset>
-    <legend>{$translate('PAGES.SAMPLE.SAMPLE_PAGE')} {data.title || count}</legend>
+    <legend>
+      {$translate('PAGES.SAMPLE.SAMPLE_PAGE')}
+      {data.title || count}
+    </legend>
     <div class="sample-input">
       <Input
         id="{id}--title"
@@ -24,14 +27,7 @@
 </Editable>
 
 <style>
-
-@media (min-width: 40em) {
-  .sample-input {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 1em;
-  }
-}
+  /* REMOVED */
 </style>
 
 <script>

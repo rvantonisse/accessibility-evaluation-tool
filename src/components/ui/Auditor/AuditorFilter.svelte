@@ -29,9 +29,7 @@
 <!-- /component -->
 
 <style>
-  .Auditor__Filter {
-    grid-column: 1 / 2;
-  }
+  /* REMOVED */
 </style>
 
 <script>

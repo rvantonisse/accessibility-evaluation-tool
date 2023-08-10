@@ -24,12 +24,7 @@
 </div>
 
 <style>
-  :global(.AddOther__Inputs > *:not(:last-child)) {
-    margin: 0 0 1em;
-  }
-  :global(.AddOther__Inputs > *:last-child) {
-    margin-bottom: 0;
-  }
+/* REMOVED */
 </style>
 
 <script>

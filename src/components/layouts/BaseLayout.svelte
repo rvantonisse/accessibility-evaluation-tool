@@ -9,20 +9,6 @@
       <div class="tool-header-name">
         WCAG-EM R<span class="display-phablet">eport </span>T<span class="display-phablet">ool</span>
       </div>
-      <div class="tool-header-logo">
-        <a href="http://w3.org/"><img
-            alt="W3C"
-            src={`${$basepath}/images/w3c.svg`}
-            width="50"
-            height="24"
-          /></a>
-        <a href="http://w3.org/WAI/"><img
-            alt="Web Accessibility Initiative"
-            src={`${$basepath}/images/wai.svg`}
-            width="90"
-            height="24"
-          /></a>
-      </div>
     </div>
   </div>
 </div>
@@ -38,25 +24,7 @@
 <!-- /@Layout -->
 
 <style>
-  .site-header .tool-header {
-    grid-column: 2 / 10;
-    width: 100%;
-    display: flex;
-    align-items: center;
-  }
-  .BaseLayout {
-    padding: 2em 1em;
-  }
-
-  .Controls {
-    font-size: 0.8125em;
-  }
-
-  @media (min-width: 60em) {
-    .BaseLayout {
-      padding: 2em 0;
-    }
-  }
+/* REMOVED */
 </style>
 
 <script>

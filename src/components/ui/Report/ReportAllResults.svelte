@@ -97,61 +97,7 @@
 {/each}
 
 <style>
-  .Auditor__ResultsTable {
-    width: 100%;
-  }
-  h5 {
-    color: var(--wai-green);
-    margin: 1.5em 0 1em;
-  }
-  .Auditor__ResultsTable th {
-    width: 30%;
-    position: absolute;
-    left: -9999em;
-    top: -9999em;
-  }
-  .Auditor__ResultsTable th:nth-child(2) {
-    width: 25%;
-  }
-  .Auditor__ResultsTable th:nth-child(3) {
-    width: 60%;
-  }
-  .Auditor__ResultsTableHeader {
-    position: sticky;
-    top: 0;
-  }
-  .Auditor__Assertion {
-    margin-bottom: 1em;
-    border-bottom: 1px solid var(--cloudy);
-  }
-  .Auditor__Assertion-SC {
-    font-weight: bold;
-    color: inherit;
-    background-color: inherit;
-  }
-  .Auditor__ResultsTable td {
-    display: block;
-    position: relative;
-    border-style: none;
-  }
-  @media (min-width: 60em) {
-    .Auditor__Assertion {
-      border-bottom: 0;
-    }
-    .Auditor__Assertion-SC {
-      font-weight: normal;
-    }
-    .Auditor__ResultsTable td {
-      display: table-cell;
-      border: 1px solid var(--cloudy);
-    }
-    .Auditor__ResultsTable th {
-      position: static;
-    }
-    .results-label-mobile {
-      display: none;
-    }
-  }
+  /* REMOVED */
 </style>
 
 <script>
@@ -170,10 +116,6 @@
   export let criteria = [];
 
   const { translate, translateToObject } = getContext('app');
-  
-  // marked.setOptions({
-  //   sanitize: true
-  // });
 
   $: TRANSLATED = {
     PRINCIPLES: $translateToObject('WCAG.PRINCIPLE'),

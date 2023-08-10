@@ -7,43 +7,7 @@
 </div>
 
 <style>
-  .Auditor {
-    clear: both;
-  }
-
-  .Auditor__Assertions {
-    grid-column: 2 / 8;
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-  }
-
-  :global(.Auditor__Assertions details:first-of-type h2:first-of-type) {
-    margin-top: 0;
-  }
-
-  :global(.Auditor__Assertions > *:not(:last-child)) {
-    margin-bottom: 1rem;
-  }
-
-  :global(.Auditor__Assertions details details) {
-    padding-left: 0;
-  }
-
-  :global(.Auditor__Assertions details details details) {
-    padding-left: 32px;
-  }
-
-  @media (min-width: 60rem) {
-    .Auditor {
-      display: grid;
-      grid-template-columns:
-        [left-start] minmax(auto, 12.5em)
-        [left-end content-start] 1.25fr
-        [content-end];
-      grid-gap: 32px;
-    }
-  }
+  /* REMOVED */
 </style>
 
 <script> 

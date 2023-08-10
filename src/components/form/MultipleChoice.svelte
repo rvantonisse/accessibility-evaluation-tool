@@ -1,5 +1,4 @@
-<Fieldset id="{id}" legend={label} {...$$restProps}>
-
+<Fieldset id="{id}" legend="{label}" {...$$restProps}>
   <ol class="MultipleChoice__options{columns ? '--columns' : ''}">
     {#each options as option, index (option)}
       <li class="MultipleChoice__option">
@@ -28,7 +27,10 @@
             on:change
           />
         {/if}
-        <label class="MultipleChoice__option__label" for="{`${id}_${index}`}">{option.title || option}</label>
+        <label
+          class="MultipleChoice__option__label"
+          for="{`${id}_${index}`}"
+        >{option.title || option}</label>
       </li>
     {/each}
   </ol>
@@ -41,50 +43,7 @@
 </Fieldset>
 
 <style>
-  .MultipleChoice__option__label,
-  .MultipleChoice__option__input {
-    display: inline-block;
-    cursor: pointer;
-  }
-
-  .MultipleChoice__option__input {
-    flex-grow: 0;
-    flex-shrink: 0;
-    width: 1em;
-    height: 1em;
-  }
-
-  .MultipleChoice__option__label {
-    margin-left: 0.5em;
-    flex-grow: 0;
-    flex-shrink: 1;
-    word-break: break-word;
-  }
-
-  .MultipleChoice__option__input:focus,
-  .MultipleChoice__option__input:hover {
-    outline: 2px solid currentColor;
-    outline-offset: 2px;
-  }
-
-  .MultipleChoice__options,
-  .MultipleChoice__options--columns {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  .MultipleChoice__options--columns {
-    columns: 4 10em;
-    column-gap: 2em;
-  }
-
-  .MultipleChoice__option {
-    break-inside: avoid-column;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-  }
+/* REMOVED */
 </style>
 
 <script context="module">
@@ -106,7 +65,6 @@
   export let value = [];
 
   function handleOptionAdd(event) {
-
     const newValue = event.detail.join();
 
     if (!newValue) {

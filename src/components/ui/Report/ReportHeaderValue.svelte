@@ -19,14 +19,7 @@
 {/if}
 
 <style>
-  .no-result {
-    font-weight: normal;
-    font-style: italic;
-    margin-bottom: 1em;
-  }
-  textarea {
-    margin-bottom: 1em;
-  }
+  /* REMOVED */
 </style>
 
 <script>

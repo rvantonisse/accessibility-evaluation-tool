@@ -36,7 +36,7 @@
       aria-expanded="{!collapsed}"
     >
       <svg aria-hidden="true" class="icon-languages"><use
-          xlink:href={`${$basepath}/images/icons.svg#icon-languages`}
+          xlink:href="{`${$basepath}/images/icons.svg#icon-languages`}"
         ></use></svg>
       <span>
         {#if collapsed}
@@ -49,23 +49,7 @@
 <!-- /component -->
 
 <style>
-  .LanguageSelect {
-    grid-column: 2 / 10;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: flex-end;
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-  }
-
-  .LanguageSelect > *:not(:first-child) {
-    margin-left: 0.5rem;
-    padding-left: 0.5rem;
-    border-left: solid 1px var(--w3c-classic);
-  }
+  /* REMOVED */
 </style>
 
 <script>

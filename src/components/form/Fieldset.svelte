@@ -25,24 +25,7 @@
 </fieldset>
 
 <style>
-  .Fieldset {
-    padding: 0;
-  }
-  .Fieldset legend /* override from original WAI style to make it work better in this application  */ {
-    font-size: 1rem;
-  }
-  .Fieldset__helptext {
-    font-size: 1rem; /* reset legend size */
-    font-weight: normal; /* reset legend weight */
-    margin: 1em 0;
-    border: solid 1px #069;
-    padding: 1em;
-    background-color: #d0e1f1;
-  }
-
-  :global(.Fieldset__elements > *:not(:last-child)) {
-    margin-bottom: 2rem;
-  }
+/* REMOVED */
 </style>
 
 <script>

@@ -26,28 +26,7 @@
  <!-- /component -->
 
 <style>
-  .HelpText {
-    padding: 0;
-  }
-
-  :global(.HelpText__label label) {
-    display: inline-block;
-  }
-
-  .HelpText__body {
-    margin: 1em 0;
-    border: solid 1px #069;
-    padding: 1em;
-    background-color: #d0e1f1;
-  }
-
-  :global(.HelpText__body > *:not(:last-child)) {
-    margin: 0 0 1em;
-  }
-
-  :global(.HelpText__body > *:last-child) {
-    margin: 0;
-  }
+/* REMOVED */
 </style>
 
 <script>

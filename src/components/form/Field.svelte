@@ -11,26 +11,7 @@
 </div>
 
 <style>
-  .Field {
-    padding: 0;
-    margin-bottom: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .Field label {
-    display: block;
-  }
-  .Field label,
-  :global(.Field .HelpText) {
-    order: -1;
-  }
-  :global(.Field input) {
-    width: 100%;
-  }
-  :global(.Field > *:not(:last-child)) {
-    margin-bottom: 0.25em;
-  }
+/* REMOVED */
 </style>
 
 <script>

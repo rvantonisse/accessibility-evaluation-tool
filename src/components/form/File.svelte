@@ -20,21 +20,7 @@
 </div>
 
 <style>
-  div { display: inline-block; }
-  :focus + .File__label {
-    color: #fff;
-    background-color: #036;
-    border-color: #036;
-  }
-
-  .File__label {
-    display: block;
-    text-align: center;
-  }
-  .File__label-hint {
-    display: block;
-    font-weight: 400;
-  }
+/* REMOVED */
 </style>
 
 <script context="module">

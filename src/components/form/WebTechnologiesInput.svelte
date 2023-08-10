@@ -8,9 +8,7 @@
 
 <div class="add-tech">
   <legend>{BTN_ADD_TECH}</legend>
-  <AddOther
-    label="{ADD_TECH}"
-    on:ADD="{handleTechnologyAdd}">
+  <AddOther label="{ADD_TECH}" on:ADD="{handleTechnologyAdd}">
     <div class="tech-input">
       <Input
         id="technologies_relied_upon__other--name"
@@ -25,24 +23,7 @@
 </div>
 
 <style>
-  .add-tech {
-    background: var(--trans-line-grey);
-    padding: 1em;   
-  }
-
-  .add-tech legend {
-    font-size: 1em;
-    padding: 0;
-    margin-bottom: .25em;
-  }
-
-  @media (min-width: 40em) {
-    .tech-input {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 1em;
-    }
-  }
+  /* REMOVED */
 </style>
 
 <script>
@@ -103,15 +84,15 @@
   }
 
   function updateTech() {
-    $exploreStore["TECHNOLOGIES_RELIED_UPON"].forEach((tech) => {
+    $exploreStore['TECHNOLOGIES_RELIED_UPON'].forEach((tech) => {
       const currentTechnologies = $webTechnologyStore;
       let exists = currentTechnologies.filter((currentTech) => {
         return currentTech.title == tech;
       });
 
-      if(exists.length == 0){
+      if (exists.length == 0) {
         let title = tech;
-        let description = "";
+        let description = '';
         webTechnologyStore.create({
           title,
           description
@@ -123,5 +104,4 @@
   onMount(() => {
     updateTech();
   });
-
 </script>

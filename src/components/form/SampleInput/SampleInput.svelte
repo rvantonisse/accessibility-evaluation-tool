@@ -6,18 +6,19 @@
   <legend>
     {label}
     {#if helptext}
-    <button 
-      type="button" 
-      on:click={toggle} 
-      class="button button-small showhidebutton" 
-      aria-expanded={showHelptext} 
-      aria-controls={`field-helptext-${id}`}        
-      aria-label={`${TRANSLATED.SHOW_HIDE_HELPTEXT} ${TRANSLATED.FOR} ${label}`}>
+      <button
+        type="button"
+        on:click="{toggle}"
+        class="button button-small showhidebutton"
+        aria-expanded="{showHelptext}"
+        aria-controls="{`field-helptext-${id}`}"
+        aria-label="{`${TRANSLATED.SHOW_HIDE_HELPTEXT} ${TRANSLATED.FOR} ${label}`}"
+      >
         {TRANSLATED.SHOW_HIDE_HELPTEXT}
-    </button>
-    {#if showHelptext}
-        <div class="SampleInput__helptext" id={`field-helptext-${id}`}> 
-        {@html helptext}
+      </button>
+      {#if showHelptext}
+        <div class="SampleInput__helptext" id="{`field-helptext-${id}`}">
+          {@html helptext}
         </div>
       {/if}
     {/if}
@@ -30,7 +31,7 @@
         <li>
           <Sample
             id="{id}__{index + 1}"
-            count={index + 1}
+            count="{index + 1}"
             bind:data="{sample}"
             on:DELETE="{handleSampleDelete}"
           />
@@ -41,34 +42,20 @@
     <p><em>{TRANSLATED.NO_SAMPLE}</em></p>
   {/if}
 
-  <AddOther
-    label="{TRANSLATED.ADD_PAGE_BUTTON}"
-    on:ADD="{handleSampleAdd}"
-  ></AddOther>
+  <AddOther label="{TRANSLATED.ADD_PAGE_BUTTON}" on:ADD="{handleSampleAdd}" />
 </fieldset>
 <!-- /component -->
 
 <style>
-  ol {
-    padding: 0;
-  }
-    ol li {
-      list-style: none;
-    }
-  .SampleInput__helptext {
-    font-size: 1rem; /* reset legend size */
-    font-weight: normal; /* reset legend weight */
-    margin: 1em 0;
-    border: solid 1px #069;
-    padding: 1em;
-    background-color: #d0e1f1;
-  }
+  /* REMOVED */
 </style>
 
 <script>
   import { getContext } from 'svelte';
 
-  import subjects, { TestSubjectTypes } from '@app/stores/earl/subjectStore/index.js';
+  import subjects, {
+    TestSubjectTypes
+  } from '@app/stores/earl/subjectStore/index.js';
 
   import AddOther from '@app/components/form/AddOther.svelte';
   import Sample from './Sample.svelte';
@@ -111,7 +98,7 @@
 
   function handleSampleDelete(event) {
     if (window.confirm(TRANSLATED.DELETE_CONFIRM)) {
-      const removeSample = value.find(sample => sample.ID === event.detail);
+      const removeSample = value.find((sample) => sample.ID === event.detail);
       const indexSample = value.indexOf(removeSample);
 
       // value need to be set explicitly
@@ -120,6 +107,6 @@
       value = newValue;
       // @TODO: removeSample.delete(); !required for cleanup
       subjects.remove(removeSample);
+    }
   }
-}
 </script>

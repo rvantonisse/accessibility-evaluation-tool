@@ -1,12 +1,10 @@
 <Field id="{id}" {...$$restProps}>
-  <input
-    id="{id}"
-    type="text"
-    on:keydown
-    bind:value
-    bind:this="{textInput}"
-  />
+  <input id="{id}" type="text" on:keydown bind:value bind:this="{textInput}" />
 </Field>
+
+<style>
+/* REMOVED */
+</style>
 
 <script>
   import { onMount } from 'svelte';
@@ -24,9 +22,3 @@
     }
   });
 </script>
-
-<style>
-  input {
-    max-width: 40em;;
-  }
-</style>

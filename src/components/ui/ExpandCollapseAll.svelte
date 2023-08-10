@@ -1,12 +1,10 @@
-<div class="excol-all">
+<div>
   <button
-    class="expand button button-secondary button-small"
     disabled={!someCollapsed}
     on:click={expandAll}>
     <span aria-hidden="true">+ </span>{TRANSLATED.EXPAND_ALL}
   </button>
   <button
-    class="collapse button button-secondary button-small"
     disabled={!someExpanded}
     on:click={collapseAll}>
     <span aria-hidden="true">— </span>{TRANSLATED.COLLAPSE_ALL}

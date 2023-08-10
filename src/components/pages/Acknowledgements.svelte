@@ -1,6 +1,6 @@
 <!--
  * @component
- *   OverviewPage
+ *   AcknowledgementsPage
  * -->
  <Page title="Acknowledgements" pageid="acknowledgements">
 

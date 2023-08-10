@@ -7,10 +7,7 @@
 {/if}
 
 <style>
-  .Button {
-    box-sizing: border-box;
-    min-width: 1.5rem;
-  }
+  /* REMOVED */
 </style>
 
 <script>
