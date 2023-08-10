@@ -53,9 +53,7 @@
 </div>
 
 <style>
-  .Auditor__Assertions {
-    margin-left: -2rem;
-  }
+  /* REMOVED */
 </style>
 
 <script>

@@ -3,22 +3,20 @@
  *   Pager
  *
  * -->
-<div class="default-grid">
-  <aside class="Pager pager" aria-label={TRANSLATED.PREVIOUSNEXT}>
+<div>
+  <aside aria-label="{TRANSLATED.PREVIOUSNEXT}">
     <ul>
       {#if previousPage}
-        <li class="Pager__Item pager--item previous">
+        <li>
           <Link to="{previousPage.path}">
-            <svg aria-hidden="true" class="pager--item-icon icon-arrow-left">
+            <svg aria-hidden="true">
               <use
-                xlink:href={`${$basepath}/images/icons.svg#icon-arrow-left`}
+                xlink:href="{`${$basepath}/images/icons.svg#icon-arrow-left`}"
               ></use>
             </svg>
-            <span class="pager--item-text">
-              <span
-                class="pager--item-text-direction"
-              >{TRANSLATED.PREVIOUS}</span>
-              <span class="pager--item-text-target">{previousPage.title}</span>
+            <span>
+              <span>{TRANSLATED.PREVIOUS}</span>
+              <span>{previousPage.title}</span>
             </span>
           </Link>
         </li>
@@ -29,8 +27,7 @@
           <Link to="{nextPage.path}">
             <svg aria-hidden="true" class="pager--item-icon icon-arrow-right">
               <use
-                xlink:href=
-                {`${$basepath}/images/icons.svg#icon-arrow-right`}
+                xlink:href="{`${$basepath}/images/icons.svg#icon-arrow-right`}"
               ></use></svg>
             <span class="pager--item-text">
               <span class="pager--item-text-direction">{TRANSLATED.NEXT}</span>
@@ -45,12 +42,7 @@
 <!-- /component -->
 
 <style>
-  .Pager {
-    grid-column: 2 / 10;
-  }
-  :global(.app-container .pager--item) {
-    max-width: none;
-  }
+  /* REMOVED */
 </style>
 
 <script>

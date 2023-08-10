@@ -24,25 +24,7 @@
 <!-- /@Layout -->
 
 <style>
-  .site-header .tool-header {
-    grid-column: 2 / 10;
-    width: 100%;
-    display: flex;
-    align-items: center;
-  }
-  .BaseLayout {
-    padding: 2em 1em;
-  }
-
-  .Controls {
-    font-size: 0.8125em;
-  }
-
-  @media (min-width: 60em) {
-    .BaseLayout {
-      padding: 2em 0;
-    }
-  }
+/* REMOVED */
 </style>
 
 <script>

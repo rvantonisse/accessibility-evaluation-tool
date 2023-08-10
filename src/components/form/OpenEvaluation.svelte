@@ -8,15 +8,18 @@
   import { getContext } from 'svelte';
   import { useNavigate } from 'svelte-navigator';
   import evaluationStore from '@app/stores/evaluationStore.js';
-  import { interacted, interactedOpenEvaluation } from '@app/stores/interactedStore.js';
+  import {
+    interacted,
+    interactedOpenEvaluation
+  } from '@app/stores/interactedStore.js';
 
   import File, { readFile } from './File.svelte';
 
   const { translate } = getContext('app');
 
   $: TRANSLATED = {
-    BUTTON: $translate('UI.NAV.MENU_OPEN', {default: 'Open evaluation'}),
-    CLEAR_WARNING: $translate('UI.NAV.CLEARWARNING'),
+    BUTTON: $translate('UI.NAV.MENU_OPEN', { default: 'Open evaluation' }),
+    CLEAR_WARNING: $translate('UI.NAV.CLEARWARNING')
   };
 
   let loading = false;
@@ -24,11 +27,11 @@
 
   function handleOpenChange(event) {
     var clearResult = true;
-    if($interacted == true){
+    if ($interacted == true) {
       var clearResult = window.confirm(TRANSLATED.CLEAR_WARNING);
     }
 
-    if(clearResult){
+    if (clearResult) {
       loading = true;
 
       const { target } = event;
@@ -49,8 +52,8 @@
             loading = false;
           });
       });
-    }else{
-      event.target.value = ''
+    } else {
+      event.target.value = '';
     }
   }
 </script>

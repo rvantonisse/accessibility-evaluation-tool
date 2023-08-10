@@ -44,43 +44,7 @@
 </fieldset>
 
 <style>
-  .Criterion__Result {
-    display: block;
-    border: none;
-    margin: 1em 0 0;
-  }
-
-  .Criterion__Subject {
-    padding: 0;
-    font-size: 1em;
-    overflow-wrap: anywhere;
-  }
-  .Criterion__Fields {
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-  }
-  .view-in-report {
-    order: -1;
-    text-align: right;
-  }
-  /* the following selectors are overly specific for cascading reasons */
-  :global(.Criterion__Fields :last-child) {
-    flex: 2;
-  }
-  :global(div.Criterion__Fields .Field:last-child label) {
-    order: -2;
-  }
-  :global(div.Criterion__Fields div.Field.Criterion__Observation) {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-  @media (min-width: 60em) {
-    .Criterion__Fields {
-      flex-direction: row;
-      gap: 2rem;
-    }
-  }
+/* REMOVED */
 </style>
 
 <script>

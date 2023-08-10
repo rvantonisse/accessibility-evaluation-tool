@@ -42,31 +42,7 @@
 </div>
 
 <style>
-  .Editable__Control--delete {
-    font-size: 1em;;
-    float: right;
-    margin-left: 1em;
-    margin-top: .25em;
-    padding: 0;
-    border: 0;
-    background-color: transparent;
-    color: currentColor;
-  }
-  .Editable {
-    background: var(--trans-line-grey);
-    padding: 1em;   
-  }
-  :global(.Editable .Editable__Contents .sample-input .Field) {
-    margin-bottom: .5em;
-  }
-  :global(.Editable legend) {
-    font-size: 1em;
-    padding: 0; 
-    margin-bottom: .25em;
-  }
-  :global(.Editable fieldset) {
-    margin-bottom: 0;
-  }
+/* REMOVED */
 </style>
 
 <script context="module">
