@@ -1,4 +1,4 @@
-import jsonld from 'jsonld/lib/jsonld.js';
+import jsonld from 'jsonld';
 
 import { getURL, toHTTP } from '@app/scripts/urls.js';
 
