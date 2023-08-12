@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import globby from 'globby';
+import { globby } from 'globby';
 import merge from 'deepmerge';
 import { promisify } from 'util';
 
