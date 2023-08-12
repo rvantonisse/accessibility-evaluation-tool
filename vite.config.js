@@ -8,7 +8,7 @@ import requireTransform from 'vite-plugin-require-transform';
 import mergeJson from './rollup/rollup-plugin-merge-json/index.js';
 import replace from '@rollup/plugin-replace';
 import terser from '@rollup/plugin-terser';
-import pkg from './package.json';
+
 import locales from './src/locales/index.json';
 
 const production = process.env.production;
