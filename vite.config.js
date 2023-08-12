@@ -12,7 +12,7 @@ import terser from '@rollup/plugin-terser';
 import locales from './src/locales/index.json';
 
 const production = process.env.production;
-const BASEPATH = process.env.BASEPATH || '';
+const BASEPATH = process.env.BASEPATH || '/';
 
 // https://vitejs.dev/config/
 export default defineConfig({
