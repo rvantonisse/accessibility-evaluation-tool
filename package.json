@@ -51,6 +51,7 @@
         "vite-plugin-require-transform": "^1.0.21"
     },
     "engines": {
-        "node": ">=16"
+    "node": ">=16",
+    "npm": ">=8"
     }
 }
