@@ -1,6 +1,6 @@
-import jsonld from 'jsonld';
-
 import { getURL, toHTTP } from '@app/scripts/urls.js';
+
+const jsonld = require('jsonld');
 
 function getItems(ldon) {
   if (!ldon || !ldon['@graph']) {
@@ -44,13 +44,13 @@ function isCompactIRI(str) {
 }
 
 function setIdFromProperties(item, properties) {
-  const newItem = {...item};
+  const newItem = { ...item };
   const url = properties.reduce((href, property) => {
     const value = newItem[property];
     if (href) {
       return href;
     }
-    
+
     const newURL = getURL(value);
 
     return newURL ? newURL.href : null;

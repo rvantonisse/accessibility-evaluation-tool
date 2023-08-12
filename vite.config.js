@@ -1,12 +1,14 @@
-import { defineConfig } from 'vite';
+import path from 'path';
+
+import { build, defineConfig } from 'vite';
 import { svelte } from '@sveltejs/vite-plugin-svelte';
-import alias from '@rollup/plugin-alias';
-import commonjs from '@rollup/plugin-commonjs';
+
+import requireTransform from 'vite-plugin-require-transform';
+
 import copy from 'rollup-plugin-copy';
 import mergeJson from './rollup/rollup-plugin-merge-json/index.js';
 import replace from '@rollup/plugin-replace';
-import resolve from '@rollup/plugin-node-resolve';
-import { terser } from 'rollup-plugin-terser';
+import terser from '@rollup/plugin-terser';
 import pkg from './package.json';
 import locales from './src/locales/index.json';
 
@@ -15,22 +17,12 @@ const BASEPATH = process.env.BASEPATH || '';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [
-    svelte({
-      // enable run-time checks when not in production
-      dev: !production,
-      // we'll extract any component CSS out into
-      // a separate file - better for performance
-      css: (css) => {
-        css.write('main.css');
-      }
-    }),
+  build: {
+    outDir: path.resolve(__dirname, "build"),
+  },
 
-    resolve({
-      browser: true,
-      dedupe: ['svelte']
-    }),
-    commonjs(),
+  plugins: [
+    svelte(),
 
     mergeJson({
       targets: locales.map((locale) => {
@@ -42,12 +34,6 @@ export default defineConfig({
       verbose: false,
       watch: true,
       wrapWithPath: true
-    }),
-
-    alias({
-      entries: {
-        '@app': './src'
-      }
     }),
 
     copy({
@@ -64,7 +50,7 @@ export default defineConfig({
         },
         {
           // index.html
-          src: 'src/index.html',
+          src: 'index.html',
           dest: 'build',
           transform: (contents) => {
             let contentsString = contents.toString();
@@ -119,6 +105,15 @@ export default defineConfig({
       __BASEPATH__: BASEPATH
     }),
 
+    requireTransform({
+      fileRegex: /jsonld\.js/
+    }),
+
     production && terser()
-  ]
+  ],
+  resolve: {
+    alias: {
+      '@app': './src'
+    }
+  }
 });
