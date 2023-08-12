@@ -1,6 +1,6 @@
 import path from 'path';
 
-import { build, defineConfig } from 'vite';
+import { defineConfig } from 'vite';
 import { svelte } from '@sveltejs/vite-plugin-svelte';
 
 import requireTransform from 'vite-plugin-require-transform';
