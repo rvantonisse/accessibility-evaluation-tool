@@ -7,11 +7,9 @@ import requireTransform from 'vite-plugin-require-transform';
 
 import mergeJson from './rollup/rollup-plugin-merge-json/index.js';
 import replace from '@rollup/plugin-replace';
-import terser from '@rollup/plugin-terser';
 
 import locales from './src/locales/index.json';
 
-const production = process.env.production;
 const BASEPATH = process.env.BASEPATH || '/';
 
 // https://vitejs.dev/config/
@@ -42,8 +40,6 @@ export default defineConfig({
     requireTransform({
       fileRegex: /jsonld\.js/
     }),
-
-    production && terser()
   ],
   resolve: {
     alias: {
