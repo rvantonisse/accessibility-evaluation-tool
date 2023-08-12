@@ -7,16 +7,19 @@
     },
     "type": "module",
     "scripts": {
-        "dev": "vite",
-        "build": "vite build",
+        "vite:dev": "vite",
+        "vite:build": "vite build",
+        "dev": "run-s clean:translations clean:dev vite:dev",
+        "build": "run-s clean:translations clean:build vite:build",
         "preview": "vite preview",
-        "build-rollup": "npm run clean:build & rollup -c",
         "build-production-rollup": "export BASEPATH='/WAI/eval/report-tool' && npm run clean:build && rollup -c",
         "build-ghpages-rollup": "export BASEPATH='/wai-wcag-em-report-tool' && npm run clean:build && rollup -c",
         "dev-rollup": "export BASEPATH='' && npm run clean:dev & rollup -c -w",
-        "clean": "rimraf ./build ./node_modules",
+        "clean": "run-p clean:*",
         "clean:build": "rimraf ./build",
-        "clean:dev": "rimraf ./build"
+        "clean:dev": "rimraf ./build",
+        "clean:node_modules": "rimraf ./node_modules",
+        "clean:translations": "rimraf ./src/locales/translations_*.json"
     },
     "main": "src/main.js",
     "dependencies": {
