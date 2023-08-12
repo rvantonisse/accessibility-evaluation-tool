@@ -183,7 +183,7 @@
       });
 
       if(answeredCount > 0){
-        var allowDataLoss = true;
+        let allowDataLoss = true;
         if($interactedOpenEvaluation != true){
           allowDataLoss = window.confirm(TRANSLATED.DATA_LOSS_WARNING)
         }
