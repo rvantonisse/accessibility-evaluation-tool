@@ -1,8 +1,22 @@
+<!-- 
+  @component
+  Button  Dispatches an on:click event.
+ -->
 {#if fake}
-  <span class="{classNames}"><slot /></span>
+  <span class="{classNames}">
+    {#if label}
+      {label}
+    {:else}
+      <slot />
+    {/if}
+  </span>
 {:else}
   <button type="button" class="{classNames}" on:click>
-    <slot />
+    {#if label}
+      {label}
+    {:else}
+      <slot />
+    {/if}
   </button>
 {/if}
 
@@ -14,8 +28,9 @@
   export let type = 'primary';
   export let fake = false;
   export let small = false;
+  export let label;
 
-  let classNames = [
+  $: classNames = [
     'Button',
     `Button--${type}`,
     small ? 'Button--small' : '',

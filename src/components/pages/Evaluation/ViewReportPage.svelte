@@ -27,7 +27,7 @@
   import { t as t, locale } from 'svelte-i18n';  
   import { downloadFileHTML } from '@app/scripts/files.js';
 
-  import Button from '@app/components/ui/Button.svelte';
+  import Button from '@app/components/ui/Button/Button.svelte';
   import Page from '@app/components/ui/Page.svelte';
   import Report from '@app/components/ui/Report.svelte';
 

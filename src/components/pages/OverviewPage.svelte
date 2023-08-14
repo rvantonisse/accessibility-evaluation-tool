@@ -89,7 +89,7 @@
   import Page from '@app/components/ui/Page.svelte';
   import ExpandCollapseAll from '@app/components/ui/ExpandCollapseAll.svelte';
   import OpenEvaluation from '@app/components/form/OpenEvaluation.svelte';
-  import Button from '@app/components/ui/Button.svelte';
+  import Button from '@app/components/ui/Button/Button.svelte';
 
   import { routes, previousVersionMsgDismissed } from '@app/stores/appStore.js';
   import evaluationStore from '@app/stores/evaluationStore.js';

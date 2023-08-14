@@ -30,7 +30,7 @@
 <script>
   import { onMount, createEventDispatcher } from 'svelte';
 
-  import Button from '@app/components/ui/Button.svelte';
+  import Button from '@app/components/ui/Button/Button.svelte';
 
   export let label = 'Add';
 
