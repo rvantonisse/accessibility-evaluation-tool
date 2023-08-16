@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   // EditorConfig
   endOfLine: 'lf',
   tabWidth: 2,
@@ -8,6 +8,7 @@ module.exports = {
   semi: true,
   singleQuote: true,
   trailingComma: 'none',
+  plugins: ['prettier-plugin-svelte'],
   overrides: [
     {
       files: '*.json',
@@ -19,9 +20,9 @@ module.exports = {
       // Svelte (prettier-plugin-svelte)
       files: '*.svelte',
       options: {
-        svelteSortOrder: 'markup-styles-scripts',
+        svelteSortOrder: 'markup-styles-scripts-options',
         svelteStrictMode: true,
-        svelteAllowShorthand: false, /* disabled by svelteStrictMode*/
+        svelteAllowShorthand: false /* disabled by svelteStrictMode*/,
         svelteBracketNewLine: true,
         svelteIndentScriptAndStyle: true
       }

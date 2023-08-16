@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ['eslint:recommended'],
+  extends: ['eslint:recommended', 'plugin:storybook/recommended'],
   parserOptions: {
     ecmaVersion: 2020,
     sourceType: 'module'

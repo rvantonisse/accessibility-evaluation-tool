@@ -66,7 +66,7 @@
   import ProgressBar from '@app/components/ui/ProgressBar.svelte';
   import ReportNumbers from '@app/components/ui/Report/ReportNumbers.svelte';
   import OpenEvaluation from '@app/components/form/OpenEvaluation.svelte';
-  import Button from '@app/components/ui/Button.svelte';
+  import Button from '@app/components/ui/Button/Button.svelte';
 
   import { wcag, scopedWcagVersions } from '@app/stores/wcagStore.js';
   import { routes } from '@app/stores/appStore.js';
