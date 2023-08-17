@@ -1,7 +1,8 @@
 import { register, init } from 'svelte-i18n';
 
 /**
- * @function registerLocales  Register translation files to Svelte-i18n
+ * @function registerLocales  
+ * @description Register translation files to Svelte-i18n
  * @param {string[]} locales  Array with lang code
  */
 function registerLocales(locales) {
