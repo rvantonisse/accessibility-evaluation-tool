@@ -43,7 +43,7 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '@app': './src'
+      '@app': path.resolve(__dirname, 'src')
     }
   }
 });
