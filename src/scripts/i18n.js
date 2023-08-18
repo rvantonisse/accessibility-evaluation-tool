@@ -1,28 +1,43 @@
 import { register, init } from 'svelte-i18n';
 
+/**
+ * @function registerLocales  
+ * @description Register translation files to Svelte-i18n
+ * @param {string[]} locales  Array with lang code
+ */
 function registerLocales(locales) {
   locales.forEach((locale) => {
-    register(locale, () => importLocale(locale));
+    /**
+     * @type {import("svelte-i18n").register}
+     */
+    register(locale, async () => await importLocale(locale));
   });
 }
 
-function importLocale(locale) {
-  return import(`../locales/translations_${locale}.json`);
+/**
+ * @function importLocale
+ * @description Import translation for specific locale
+ * @param {string} locale Requested language locale code to import
+ * @return {Object}  Language specific dictionary with translations
+ */
+async function importLocale(locale) {
+  return import(`@app/locales/translations_${locale}.json`);
 }
 
+/**
+ * @function internationalize
+ * @description
+ *  Internationalization wrapper for the svelte app,
+ *  utilizing svelte-i18n
+ * @param {string[]} locales 
+ */
 export async function internationalize(locales) {
-
+  /** 
+   * @type {string} https://www.rfc-editor.org/rfc/rfc5646.txt; lang code, e.g. "en-US"
+   */
   const defaultLocale = locales[0];
-  // Asynchronous loading
 
-  // WE WANT TO USE THIS!!! 🤬
-  // It is an important step in making locale additions fully automagical!
-  // For this to work rollup-plugin dynamic import vars needs to work...
-  // await registerLocales(locales);
-
-  // Keep using this until above works... 😭
-  register('en', () => import('../locales/translations_en.json'));
-  register('nl', () => import('../locales/translations_nl.json'));
+  registerLocales(locales);
 
   init({
     fallbackLocale: defaultLocale,
