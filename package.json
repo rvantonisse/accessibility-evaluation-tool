@@ -9,7 +9,7 @@
   "scripts": {
     "vite:dev": "vite",
     "vite:build": "vite build",
-    "dev": "run-s clean:translations clean:dev vite:dev",
+    "dev": "run-s clean:translations vite:dev",
     "build": "run-s clean:translations clean:build vite:build",
     "preview": "vite preview",
     "clean": "run-p clean:*",
