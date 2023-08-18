@@ -24,6 +24,9 @@
 
   import BaseRoute from '@app/components/routes/BaseRoute.svelte';
 
+  /**
+   * @type {string} Required path where app will run
+   */
   export let basepath = '';
 
   setContext('app', {

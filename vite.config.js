@@ -33,14 +33,26 @@ export default defineConfig({
       wrapWithPath: true
     }),
 
+    /**
+     * https://github.com/rollup/plugins/tree/master/packages/replace
+     * Replaces strings {string: replacement,} in:
+     * - ./src/main.js
+     */
     replace({
+      /** @type {string} Path where app will run */
       __BASEPATH__: BASEPATH
     }),
 
+    /**
+     * CommonJS modules required in code
+     * need to be transformed to ESM compatible import
+     * clientside.
+     */
     requireTransform({
       fileRegex: /jsonld\.js/
     }),
   ],
+
   resolve: {
     alias: {
       '@app': path.resolve(__dirname, 'src')
