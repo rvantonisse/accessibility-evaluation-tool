@@ -9,15 +9,11 @@
   "scripts": {
     "vite:dev": "vite",
     "vite:build": "vite build",
-    "dev": "run-s clean:translations clean:dev vite:dev",
+    "dev": "run-s clean:translations vite:dev",
     "build": "run-s clean:translations clean:build vite:build",
     "preview": "vite preview",
-    "build-production-rollup": "export BASEPATH='/WAI/eval/report-tool' && npm run clean:build && rollup -c",
-    "build-ghpages-rollup": "export BASEPATH='/wai-wcag-em-report-tool' && npm run clean:build && rollup -c",
-    "dev-rollup": "export BASEPATH='' && npm run clean:dev & rollup -c -w",
     "clean": "run-p clean:*",
     "clean:build": "rimraf ./build",
-    "clean:dev": "rimraf ./build",
     "clean:node_modules": "rimraf ./node_modules",
     "clean:translations": "rimraf ./src/locales/translations_*.json",
     "storybook": "storybook dev -p 6006",
@@ -31,11 +27,6 @@
     "svelte-navigator": "^3.1.4"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0",
-    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
-    "@babel/plugin-transform-runtime": "^7.0.0",
-    "@babel/preset-env": "^7.0.0",
-    "@babel/runtime": "^7.0.0",
     "@rollup/plugin-replace": "^2.3.3",
     "@storybook/addon-essentials": "^7.2.3",
     "@storybook/addon-interactions": "^7.2.3",

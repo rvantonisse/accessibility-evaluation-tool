@@ -13,8 +13,9 @@ internationalize(locales).then(() => {
   new App({
     target: document.getElementById('wai-wcag-em-report-tool'),
     props: {
-      // Replaced string, see rollup.config.json replace plugin.
-      basepath: '__BASEPATH__'
+      // Replaced string passed with `vite --base=/custom/app/path`
+      // https://vitejs.dev/guide/build.html#public-base-path
+      basepath: import.meta.env.BASE_URL
     }
   });
 });
