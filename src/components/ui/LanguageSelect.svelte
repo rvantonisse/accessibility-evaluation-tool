@@ -6,6 +6,14 @@
   {#if !collapsed}
     <span class="LanguageSelect__languages_container languagelist">
       <strong id="LanguageSelect__label">{LABEL_TRANSLATIONS}:</strong>
+      <!-- 
+        svelte-ignore a11y-click-events-have-key-events
+        ---
+        Managed with event delegation. As click events bubble up,
+        a click on a nested button or link cause the click event
+        to trigger on the list.
+        One registered event to handle all nested clicks.
+      /-->
       <ul
         class="LanguageSelect__languages languagelistul"
         on:click="{handleClick}"
