@@ -1,9 +1,9 @@
 {
-  "name": "WCAG-EM-Report-Tool",
+  "name": "accessibility-evaluation-tool",
   "version": "3.0.3",
   "repository": {
     "type": "git",
-    "url": "git://github.com/w3c/wcag-em-report-tool.git"
+    "url": "git://github.com/rvantonisse/accessibility-evaluation-tool.git"
   },
   "type": "module",
   "scripts": {
