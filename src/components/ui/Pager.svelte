@@ -9,11 +9,6 @@
       {#if previousPage}
         <li>
           <Link to="{previousPage.path}">
-            <svg aria-hidden="true">
-              <use
-                xlink:href="{`${$basepath}/images/icons.svg#icon-arrow-left`}"
-              ></use>
-            </svg>
             <span>
               <span>{TRANSLATED.PREVIOUS}</span>
               <span>{previousPage.title}</span>
@@ -25,10 +20,6 @@
       {#if nextPage}
         <li class="Pager__Item pager--item next">
           <Link to="{nextPage.path}">
-            <svg aria-hidden="true" class="pager--item-icon icon-arrow-right">
-              <use
-                xlink:href="{`${$basepath}/images/icons.svg#icon-arrow-right`}"
-              ></use></svg>
             <span class="pager--item-text">
               <span class="pager--item-text-direction">{TRANSLATED.NEXT}</span>
               <span class="pager--item-text-target">{nextPage.title}</span>
