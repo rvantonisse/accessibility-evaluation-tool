@@ -1,5 +1,7 @@
 # Accessibility Evaluation Tool
 
+![](./src/static/images/favicon.png)
+
 Evaluating accessibility made easy.
 
 ## About the Accessibility Evaluation Tool
