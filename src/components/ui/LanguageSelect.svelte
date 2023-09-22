@@ -43,9 +43,6 @@
       class="button-inline showhidebutton"
       aria-expanded="{!collapsed}"
     >
-      <svg aria-hidden="true" class="icon-languages"><use
-          xlink:href="{`${$basepath}/images/icons.svg#icon-languages`}"
-        ></use></svg>
       <span>
         {#if collapsed}
           {BUTTON_SHOW_TRANSLATIONS}

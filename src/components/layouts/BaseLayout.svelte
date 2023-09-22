@@ -7,7 +7,7 @@
   <div class="default-grid">
     <div class="tool-header">
       <div class="tool-header-name">
-        WCAG-EM R<span class="display-phablet">eport </span>T<span class="display-phablet">ool</span>
+        Accessibility Evaluation Tool
       </div>
     </div>
   </div>
