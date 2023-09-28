@@ -1,10 +1,12 @@
 <div>
   <Button
+    small
     disabled={!someCollapsed}
     on:click={expandAll}>
     <span aria-hidden="true">+</span> {TRANSLATED.EXPAND_ALL}
   </Button>
   <Button
+    small
     disabled={!someExpanded}
     on:click={collapseAll}>
     <span aria-hidden="true">—</span> {TRANSLATED.COLLAPSE_ALL}
