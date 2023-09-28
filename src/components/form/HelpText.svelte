@@ -7,15 +7,14 @@
 <div class="HelpText information" >
   <div class="HelpText__label">
     {@html labelHTML}
-    <button 
-      type="button" 
+    <Button
+      small
       on:click={toggle} 
-      class="button button-small showhidebutton"
       aria-expanded="{open}"
       aria-label={`${buttonText} ${TRANSLATED.FOR} ${label}`}
     >
      {@html buttonText} 
-    </button>
+    </Button>
   </div>
    {#if open}
   <div class="HelpText__body">
@@ -31,6 +30,7 @@
 
 <script>
   import { getContext } from 'svelte';
+  import Button from '../ui/Button/Button.svelte';
 
   export let label;
   export let labelHTML;

@@ -38,6 +38,7 @@
 
   .Button.small {
     --Button-padding: var(--aet-padding-condensed, 0.25rem);
+    --Button-shadow: 1px 1px 0 0 #333;
   }
 
   .Button[disabled] {
