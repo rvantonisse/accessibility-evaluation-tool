@@ -20,7 +20,7 @@
   >
     <slot />
   </div>
-  <Button type="secondary" on:click="{handleAddClick}">{label}</Button>
+  <Button on:click="{handleAddClick}">{label}</Button>
 </div>
 
 <style>

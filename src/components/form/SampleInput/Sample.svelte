@@ -1,8 +1,8 @@
 <Editable
   id="{data.ID}"
   label="{data.title || $translate('PAGES.SAMPLE.SAMPLE_PAGE')}"
-  persistent="{true}"
-  removable="{true}"
+  persistent
+  removable
   on:DELETE
 >
   <fieldset>

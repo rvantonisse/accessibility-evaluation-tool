@@ -6,16 +6,15 @@
   <legend>
     {label}
     {#if helptext}
-      <button
-        type="button"
+      <Button
+        small
         on:click="{toggle}"
-        class="button button-small showhidebutton"
         aria-expanded="{showHelptext}"
         aria-controls="{`field-helptext-${id}`}"
         aria-label="{`${TRANSLATED.SHOW_HIDE_HELPTEXT} ${TRANSLATED.FOR} ${label}`}"
       >
         {TRANSLATED.SHOW_HIDE_HELPTEXT}
-      </button>
+      </Button>
       {#if showHelptext}
         <div class="SampleInput__helptext" id="{`field-helptext-${id}`}">
           {@html helptext}
@@ -58,6 +57,7 @@
   } from '@app/stores/earl/subjectStore/index.js';
 
   import AddOther from '@app/components/form/AddOther.svelte';
+  import Button from '@app/components/ui/Button/Button.svelte';
   import Sample from './Sample.svelte';
 
   export let id;

@@ -27,14 +27,13 @@
   <p>
     {TRANSLATED.CRITERION.DESCRIPTION}
     {#if TRANSLATED.CRITERION.DETAILS[1]}
-      <button
-        type="button"
-        class="showhidebutton button button-small"
+      <Button
+        small
         aria-expanded="{criterionDetailsOpen}"
         on:click="{toggleCriterionDetails}"
       >
         {TRANSLATED.SHOW_FULL_DESCRIPTION}
-      </button>
+      </Button>
     {/if}
   </p>
   <!-- 
@@ -118,9 +117,10 @@
     TestSubjectTypes
   } from '@app/stores/earl/subjectStore/index.js';
 
+  import Button from '@app/components/ui/Button/Button.svelte';
   import EarlResult from '@app/components/form/EarlResult.svelte';
   import ResourceLink from '@app/components/ui/ResourceLink.svelte';
-  import Acknowledgements from '../../pages/Acknowledgements.svelte';
+
 
   export let conformanceLevel;
   export let id;
