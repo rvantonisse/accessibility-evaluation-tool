@@ -1,41 +1,65 @@
 <!-- 
   @component
-  Button  Dispatches an on:click event.
+  Button
+  Dispatches an on:click event.
  -->
-{#if fake}
-  <span class="{classNames}">
-    {#if label}
-      {label}
-    {:else}
-      <slot />
-    {/if}
-  </span>
-{:else}
-  <button type="button" class="{classNames}" on:click>
-    {#if label}
-      {label}
-    {:else}
-      <slot />
-    {/if}
-  </button>
-{/if}
+<button
+  type="{type}"
+  class="Button"
+  class:primary="{primary}"
+  class:small="{small}"
+  on:click
+>
+  <slot />
+</button>
 
 <style>
-  /* REMOVED */
+  .Button {
+    /* vars */
+    --Button-border-width: var(--aet-line-width-thin, 1px);
+    --Button-border-style: var(--aet-line-style-normal, solid);
+    --Button-border-color: var(--aet-line-color, currentColor);
+    --Button-border: var(--Button-border-width) var(--Button-border-style)
+      var(--Button-border-color);
+
+    --Button-padding: var(--aet-padding-normal, 0.5rem);
+
+    --Button-text-color: var(--aet-text-color, black);
+    --Button-background-color: var(--aet-background-color, white);
+
+    --Button-shadow: 3px 3px 0 0 #333c;
+
+    box-sizing: border-box;
+    margin: 0;
+    border: var(--Button-border);
+    padding: var(--Button-padding);
+
+    box-shadow: var(--Button-shadow);
+
+    color: var(--Button-text-color);
+    background-color: var(--Button-background-color);
+
+    cursor: pointer;
+  }
+
+  .Button:hover {
+    --Button-background-color: #ccc;
+  }
+
+  .Button:focus-visible {
+    outline: var(--Button-border);
+    outline-offset: 5px;
+    --Button-background-color: #ccc;
+  }
+
+  .Button.small {
+    --Button-padding: var(--aet-padding-condensed, 0.25rem);
+  }
 </style>
 
 <script>
-  export let type = 'primary';
-  export let fake = false;
+  /** @type {("button"|"submit")} */
+  export let type = 'button';
   export let small = false;
-  export let label;
-
-  $: classNames = [
-    'Button',
-    `Button--${type}`,
-    small ? 'Button--small' : '',
-    'button',
-    `button-${type}`,
-    small ? 'button-small' : ''
-  ].join(' ');
+  export let primary = false;
 </script>
