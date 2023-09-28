@@ -1,5 +1,4 @@
 <div class={`${className} Field`}>
-  <slot />
   {#if helptext}
     <HelpText
       labelHTML="{label && `<label for="${id}">${label}</label>`}"
@@ -8,6 +7,7 @@
       {@html helptext}
     </HelpText>
   {:else if label}<label for="{id}">{label}:</label>{/if}
+  <slot />
 </div>
 
 <style>
