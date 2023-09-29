@@ -1,23 +1,13 @@
 <fieldset id="{id}" class="Fieldset field">
   <legend>
     {@html legend}
-    {#if helptext}
-      <Button
-        small
-        on:click="{toggle}"
-        aria-expanded="{showHelptext}"
-        aria-controls="{`field-helptext-${id}`}"
-        aria-label="{`${TRANSLATED.SHOW_HIDE_HELPTEXT} ${TRANSLATED.FOR} ${legend}`}"
-      >
-        {TRANSLATED.SHOW_HIDE_HELPTEXT}
-      </Button>
-      {#if showHelptext}
-        <div class="Fieldset__helptext" id="{`field-helptext-${id}`}">
-          {@html helptext}
-        </div>
-      {/if}
-    {/if}
   </legend>
+
+  {#if helptext}
+    <HelpText>
+      {@html helptext}
+    </HelpText>
+  {/if}
 
   <div class="Fieldset__elements">
     <slot />
@@ -31,7 +21,7 @@
 <script>
   import { getContext } from 'svelte';
 
-  import Button from '@app/components/ui/Button/Button.svelte';
+  import HelpText from './HelpText.svelte';
 
   export let id;
   export let legend;
