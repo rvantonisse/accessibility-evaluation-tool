@@ -1,46 +1,33 @@
 <!--
- * @component
- * HelpText
- * @property label <String|@html>
- * @slot Detail contents
- * -->
-<div class="HelpText information" >
-  <div class="HelpText__label">
-    {@html labelHTML}
-    <Button
-      small
-      on:click={toggle} 
-      aria-expanded="{open}"
-      aria-label={`${buttonText} ${TRANSLATED.FOR} ${label}`}
-    >
-     {@html buttonText} 
-    </Button>
-  </div>
-   {#if open}
-  <div class="HelpText__body">
+@component
+
+# HelpText
+
+- property {string} label
+- slot Detail contents
+-->
+<div class="HelpText information">
+  {@html labelHTML}
+  <Details
+    summary="{open ? TRANSLATED.HIDE_INFO : TRANSLATED.SHOW_INFO}"
+    bind:open="{open}"
+  >
     <slot />
-  </div>
-  {/if}
+  </Details>
 </div>
- <!-- /component -->
+<!-- /component -->
 
 <style>
-/* REMOVED */
+  /* REMOVED */
 </style>
 
 <script>
   import { getContext } from 'svelte';
-  import Button from '../ui/Button/Button.svelte';
+  import Details from '@app/components/ui/Details/Details.svelte';
 
   export let label;
   export let labelHTML;
   export let open = false;
-
-  function toggle() {
-    open = !open;
-  }
-
-  $: buttonText = open ? TRANSLATED.HIDE_INFO : TRANSLATED.SHOW_INFO;
 
   const { translate } = getContext('app');
 
