@@ -12,26 +12,24 @@
         </div>
       {:else}{title}{/if}
 
-      <button
-        type="button"
-        class="button-secondary button-small your-report__showhide"
+      <Button
+        small
         on:click="{toggle}"
         aria-expanded="{$yourReportPanelOpen}"
       >
         {@html TRANSLATED.SHOW_HIDE}
-      </button>
+      </Button>
     </h2>
 
     <slot />
   {:else}
-    <button
-      type="button"
-      class="button-secondary button-small your-report__showhide"
+    <Button
+      small
       on:click="{toggle}"
       aria-expanded="{$yourReportPanelOpen}"
     >
       {@html TRANSLATED.SHOW_HIDE}
-    </button>
+    </Button>
   {/if}
 </aside>
 
@@ -42,6 +40,8 @@
 <script>
   import { getContext } from 'svelte';
   import { yourReportPanelOpen } from '@app/stores/appStore.js';
+
+  import Button from '@app/components/ui/Button/Button.svelte';
 
   export let title = null;
   export let subtitle = null;

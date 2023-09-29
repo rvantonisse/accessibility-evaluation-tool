@@ -20,15 +20,16 @@
       >
         {#each locales as appLocale}
           <li
-            class="LanguageSelect__language {appLocale === currentLocale ? 'language__item--current' : ''}"
+            class="LanguageSelect__language {appLocale === currentLocale
+              ? 'language__item--current'
+              : ''}"
           >
             {#if appLocale === currentLocale}
               <strong>{currentLocale.title}</strong>
             {:else}
-              <a
-                lang="{appLocale.lang}"
-                href="#{appLocale.lang}"
-              >{appLocale.title}</a>
+              <a lang="{appLocale.lang}" href="#{appLocale.lang}"
+                >{appLocale.title}</a
+              >
             {/if}
           </li>
         {/each}
@@ -36,21 +37,21 @@
     </span>
   {/if}
   <span class="LanguageSelect__toggle">
-    <button
+    <Button
       id="showoptions"
-      on:click="{handleToggle}"
-      type="button"
-      class="button-inline showhidebutton"
+      small
       aria-expanded="{!collapsed}"
+      on:click="{handleToggle}"
     >
       <span>
         {#if collapsed}
           {BUTTON_SHOW_TRANSLATIONS}
         {:else}{BUTTON_HIDE_TRANSLATIONS}{/if}
       </span>
-    </button>
+    </Button>
   </span>
 </div>
+
 <!-- /component -->
 
 <style>
@@ -59,7 +60,8 @@
 
 <script>
   import { t as translate, locale } from 'svelte-i18n';
-  import { basepath } from '@app/stores/appStore.js';
+
+  import Button from '@app/components/ui/Button/Button.svelte';
 
   export let locales = [];
 

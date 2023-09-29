@@ -46,15 +46,15 @@
   </dl>
 
   {#if editAbout}
-    <button class="button button-secondary" on:click="{toggleEditAbout}">
+    <Button small on:click="{toggleEditAbout}">
       {TRANSLATED.BUTTON_SAVE}
       <span class="visually-hidden">{TRANSLATED.HEADING_ABOUT}</span>
-    </button>
+    </Button>
   {:else}
-    <button class="button button-secondary" on:click="{toggleEditAbout}">
+    <Button small on:click="{toggleEditAbout}">
       {TRANSLATED.BUTTON_EDIT}
       <span class="visually-hidden">{TRANSLATED.HEADING_ABOUT}</span>
-    </button>
+    </Button>
   {/if}
 </div>
 
@@ -69,26 +69,20 @@
         store="summaryStore"
       />
     </div>
-    <button
-      class="button button-secondary"
-      on:click="{toggleEditExecutiveSummary}"
-    >
+    <Button small on:click="{toggleEditExecutiveSummary}">
       {TRANSLATED.BUTTON_SAVE}
       <span class="visually-hidden">{TRANSLATED.HEADING_SUMMARY}</span>
-    </button>
+    </Button>
   {:else}
     <div>
       {#if $summaryStore['EVALUATION_SUMMARY']}
         {@html marked($summaryStore['EVALUATION_SUMMARY'])}
       {:else}<span class="no-result">{TRANSLATED.LABEL_NOT_PROVIDED}</span>{/if}
     </div>
-    <button
-      class="button button-secondary"
-      on:click="{toggleEditExecutiveSummary}"
-    >
+    <Button small on:click="{toggleEditExecutiveSummary}">
       {TRANSLATED.BUTTON_EDIT}
       <span class="visually-hidden">{TRANSLATED.HEADING_SUMMARY}</span>
-    </button>
+    </Button>
   {/if}
 </div>
 
@@ -186,21 +180,15 @@
   </dl>
 
   {#if editEvaluationScope}
-    <button
-      class="button button-secondary"
-      on:click="{toggleEditEvaluationScope}"
-    >
+    <Button small on:click="{toggleEditEvaluationScope}">
       {TRANSLATED.BUTTON_SAVE}
       <span class="visually-hidden">{TRANSLATED.HEADING_SCOPE}</span>
-    </button>
+    </Button>
   {:else}
-    <button
-      class="button button-secondary"
-      on:click="{toggleEditEvaluationScope}"
-    >
+    <Button small on:click="{toggleEditEvaluationScope}">
       {TRANSLATED.BUTTON_EDIT}
       <span class="visually-hidden">{TRANSLATED.HEADING_SCOPE}</span>
-    </button>
+    </Button>
   {/if}
 </div>
 
@@ -238,18 +226,22 @@
 <h2 class="strip">{TRANSLATED.HEADING_RESOURCES}</h2>
 <ul class="strip">
   <li>
-    <a href="https://www.w3.org/WAI/intro/wcag">Web Content Accessibility
-      Guidelines (WCAG) Overview</a>
+    <a href="https://www.w3.org/WAI/intro/wcag"
+      >Web Content Accessibility Guidelines (WCAG) Overview</a
+    >
   </li>
   <li>
-    <a href="https://www.w3.org/WAI/WCAG21/quickref/">How to Meet WCAG 2.1 Quick
-      Reference</a>
+    <a href="https://www.w3.org/WAI/WCAG21/quickref/"
+      >How to Meet WCAG 2.1 Quick Reference</a
+    >
   </li>
   <li>
-    <a href="https://www.w3.org/WAI/eval/conformance">WCAG Evaluation
-      Methodology (WCAG-EM) Overview</a>
+    <a href="https://www.w3.org/WAI/eval/conformance"
+      >WCAG Evaluation Methodology (WCAG-EM) Overview</a
+    >
   </li>
 </ul>
+
 <!-- /component -->
 
 <style>
@@ -266,16 +258,15 @@
     WCAG_VERSIONS
   } from '@app/stores/wcagStore.js';
 
+  import Button from '@app/components/ui/Button/Button.svelte';
   import ReportAllResults from '@app/components/ui/Report/ReportAllResults.svelte';
   import ReportHeaderKey from '@app/components/ui/Report/ReportHeaderKey.svelte';
   import ReportHeaderValue from '@app/components/ui/Report/ReportHeaderValue.svelte';
   import ReportHeaderMultiValue from '@app/components/ui/Report/ReportHeaderMultiValue.svelte';
   import ReportSummary from './Report/ReportSummary.svelte';
-  import evaluationStore from '@app/stores/evaluationStore.js';
 
-  const { sampleStore, summaryStore, exploreStore, translate } = getContext(
-    'app'
-  );
+  const { sampleStore, summaryStore, exploreStore, translate } =
+    getContext('app');
 
   let editAbout = false;
   let editExecutiveSummary = false;

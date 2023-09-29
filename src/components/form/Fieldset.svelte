@@ -2,18 +2,18 @@
   <legend>
     {@html legend}
     {#if helptext}
-      <button 
-        type="button" 
-        on:click={toggle} 
-        class="button button-small showhidebutton" 
-        aria-expanded={showHelptext} 
-        aria-controls={`field-helptext-${id}`}
-        aria-label={`${TRANSLATED.SHOW_HIDE_HELPTEXT} ${TRANSLATED.FOR} ${legend}`}>
-          {TRANSLATED.SHOW_HIDE_HELPTEXT}
-      </button>
+      <Button
+        small
+        on:click="{toggle}"
+        aria-expanded="{showHelptext}"
+        aria-controls="{`field-helptext-${id}`}"
+        aria-label="{`${TRANSLATED.SHOW_HIDE_HELPTEXT} ${TRANSLATED.FOR} ${legend}`}"
+      >
+        {TRANSLATED.SHOW_HIDE_HELPTEXT}
+      </Button>
       {#if showHelptext}
-        <div class="Fieldset__helptext" id={`field-helptext-${id}`}>
-        {@html helptext}
+        <div class="Fieldset__helptext" id="{`field-helptext-${id}`}">
+          {@html helptext}
         </div>
       {/if}
     {/if}
@@ -25,15 +25,17 @@
 </fieldset>
 
 <style>
-/* REMOVED */
+  /* REMOVED */
 </style>
 
 <script>
   import { getContext } from 'svelte';
 
+  import Button from '@app/components/ui/Button/Button.svelte';
+
   export let id;
   export let legend;
-  export let helptext = "";
+  export let helptext = '';
 
   function toggle() {
     showHelptext = !showHelptext;
