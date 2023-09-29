@@ -1,17 +1,15 @@
-<div class={`${className} Field`}>
+<div class="Field">
+  <label for="{id}">{label}</label>
   {#if helptext}
-    <HelpText
-      labelHTML="{label && `<label for="${id}">${label}</label>`}"
-      {label}
-    >
+    <HelpText>
       {@html helptext}
     </HelpText>
-  {:else if label}<label for="{id}">{label}:</label>{/if}
+  {/if}
   <slot />
 </div>
 
 <style>
-/* REMOVED */
+  /* REMOVED */
 </style>
 
 <script>
@@ -19,6 +17,5 @@
 
   export let id;
   export let label;
-  export let helptext = "";
-  export let className = "";
+  export let helptext = '';
 </script>

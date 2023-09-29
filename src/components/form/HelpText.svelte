@@ -6,15 +6,12 @@
 - property {string} label
 - slot Detail contents
 -->
-<div class="HelpText information">
-  {@html labelHTML}
-  <Details
-    summary="{open ? TRANSLATED.HIDE_INFO : TRANSLATED.SHOW_INFO}"
-    bind:open="{open}"
-  >
-    <slot />
-  </Details>
-</div>
+<Details
+  summary="{open ? TRANSLATED.HIDE_INFO : TRANSLATED.SHOW_INFO}"
+  bind:open="{open}"
+>
+  <slot />
+</Details>
 <!-- /component -->
 
 <style>
@@ -25,8 +22,6 @@
   import { getContext } from 'svelte';
   import Details from '@app/components/ui/Details/Details.svelte';
 
-  export let label;
-  export let labelHTML;
   export let open = false;
 
   const { translate } = getContext('app');
