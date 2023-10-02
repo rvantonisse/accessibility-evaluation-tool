@@ -53,7 +53,7 @@
 
 <script>
   import AddOther from './AddOther.svelte';
-  import Fieldset from './Fieldset.svelte';
+  import Fieldset from './Fieldset/Fieldset.svelte';
   import Input from './Input.svelte';
 
   export let id;

@@ -38,7 +38,7 @@
   } from '@app/stores/earl/subjectStore/index.js';
 
   import AddOther from '@app/components/form/AddOther.svelte';
-  import Fieldset from '../Fieldset.svelte';
+  import Fieldset from '../Fieldset/Fieldset.svelte';
   import Sample from './Sample.svelte';
 
   export let id;
