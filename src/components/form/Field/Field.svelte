@@ -9,26 +9,18 @@
 </div>
 
 <style>
-  div.Field {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: start;
-  }
-  label {
-    font-weight: bold;
-  }
-
-  div.Field.inline {
-    flex-direction: row;
-  }
+  @import './styles.css';
 </style>
 
 <script>
   import HelpText from '../HelpText.svelte';
 
+  /** @type {String} id */
   export let id;
+
+  /** @type {String} label */
   export let label;
+  
   export let helptext = '';
   export let inline = false;
 </script>
