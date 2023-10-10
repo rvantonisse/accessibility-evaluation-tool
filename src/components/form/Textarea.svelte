@@ -8,7 +8,7 @@
 </style>
 
 <script>
-  import Field from './Field.svelte';
+  import Field from './Field/Field.svelte';
 
   const defaultRows = 5;
   let contentBasedRows;
