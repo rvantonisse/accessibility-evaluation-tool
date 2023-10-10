@@ -1,4 +1,14 @@
-<fieldset id="{id}" class="Fieldset field">
+<!-- 
+  @component
+  # Fieldset
+
+  A set of Fields. Used to group user input by theme.
+
+  Also more commonly used as Field for checkbox and radio groups.
+
+  The Fieldset is only used in Form context and requires a legend and id.  
+ -->
+<fieldset id="{id}" class="Fieldset" class:boxed="{boxed}">
   <legend>
     {@html legend}
   </legend>
@@ -13,17 +23,18 @@
     <slot />
   </div>
 </fieldset>
+<!-- /component -->
 
 <style>
-  legend {
-    font-weight: bold;
-  }
+  @import './styles.css';
 </style>
 
 <script>
   import HelpText from '../HelpText.svelte';
 
-  export let id;
-  export let legend;
+  /** @type {string} id */
+  export let id = '';
+  export let legend = '';
   export let helptext = '';
+  export let boxed = false;
 </script>

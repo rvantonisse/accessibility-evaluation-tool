@@ -1,0 +1,26 @@
+fieldset {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: 0;
+    margin-inline: 0;
+    margin-block: 0;
+    border-width: 0;
+    border-style: solid;
+    border-color: currentColor;
+    padding: 0;
+    padding-inline: 0;
+    padding-block: 0;
+  }
+
+  .boxed {
+    border-width: 0.1rem;
+    padding: 0.9rem;
+  }
+
+  legend {
+    float: left;
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+  }

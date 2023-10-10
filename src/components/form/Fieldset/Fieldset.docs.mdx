@@ -1,0 +1,16 @@
+import { Canvas, Controls, Meta, Story, Source } from '@storybook/blocks';
+
+import * as FieldsetStories from './Fieldset.stories.svelte';
+
+<Meta title="Forms/Fieldset/README" />
+
+# Fieldset
+
+A set of Fields. Used to group user input by theme.
+
+Also more commonly used as Field for checkbox and radio groups.
+
+The Fieldset is only used in Form context and requires a legend and id.
+
+<Canvas of={FieldsetStories.Default} />
+<Controls of={FieldsetStories.Default} />
