@@ -6,7 +6,6 @@
   args="{{
     id: 'default',
     label: 'An input field',
-    type: 'text',
     inline: false
   }}"
   argTypes="{{
@@ -15,14 +14,11 @@
         type: 'text'
       }
     },
-    type: {
-      control: 'select',
-      options: ['text', 'email', 'tel']
-    }
   }}"
+  source
 >
   <Field id="{args.id}" label="{args.label}" inline="{args.inline}">
-    <input type="{args.type}" id="{args.id}" />
+    <input type="text" id="{args.id}" />
   </Field>
 </Story>
 
