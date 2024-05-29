@@ -31,7 +31,7 @@
 
   import Editable from '@app/components/form/Editable.svelte';
   import Input from '@app/components/form/Input.svelte';
-  import Fieldset from '../Fieldset/Fieldset.svelte';
+  import Fieldset from '@app/components/form/Fieldset/Fieldset.svelte';
 
   export let id;
   export let data;
