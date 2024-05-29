@@ -15,12 +15,11 @@
 <script>
   import HelpText from '../HelpText.svelte';
 
-  /** @type {String} id */
+  /** @type {string} id */
   export let id;
 
-  /** @type {String} label */
+  /** @type {string} */
   export let label;
-  
   export let helptext = '';
   export let inline = false;
 </script>
