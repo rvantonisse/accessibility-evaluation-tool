@@ -1,29 +1,25 @@
 <Editable
   id="{data.ID}"
   label="{data.title || $translate('PAGES.SAMPLE.SAMPLE_PAGE')}"
-  persistent="{true}"
-  removable="{true}"
+  persistent
+  removable
   on:DELETE
 >
-  <fieldset>
-    <legend>
-      {$translate('PAGES.SAMPLE.SAMPLE_PAGE')}
-      {data.title || count}
-    </legend>
-    <div class="sample-input">
-      <Input
-        id="{id}--title"
-        label="{$translate('PAGES.SAMPLE.LABEL_HANDLE')}"
-        autofocus="{true}"
-        bind:value="{data.title}"
-      />
-      <Input
-        id="{id}--description"
-        label="{$translate('PAGES.SAMPLE.LABEL_PAGE')}"
-        bind:value="{data.description}"
-      />
-    </div>
-  </fieldset>
+  <Fieldset
+    legend="{$translate('PAGES.SAMPLE.SAMPLE_PAGE')} {data.title || count}"
+  >
+    <Input
+      id="{id}--title"
+      label="{$translate('PAGES.SAMPLE.LABEL_HANDLE')}"
+      autofocus="{true}"
+      bind:value="{data.title}"
+    />
+    <Input
+      id="{id}--description"
+      label="{$translate('PAGES.SAMPLE.LABEL_PAGE')}"
+      bind:value="{data.description}"
+    />
+  </Fieldset>
 </Editable>
 
 <style>
@@ -35,6 +31,7 @@
 
   import Editable from '@app/components/form/Editable.svelte';
   import Input from '@app/components/form/Input.svelte';
+  import Fieldset from '@app/components/form/Fieldset/Fieldset.svelte';
 
   export let id;
   export let data;

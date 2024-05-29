@@ -27,7 +27,7 @@
 <!-- /component -->
 
 <script>
-  import Field from './Field.svelte';
+  import Field from './Field/Field.svelte';
 
   export let id;
   export let options = [];

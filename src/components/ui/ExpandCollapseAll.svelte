@@ -1,18 +1,22 @@
 <div>
-  <button
+  <Button
+    small
     disabled={!someCollapsed}
     on:click={expandAll}>
-    <span aria-hidden="true">+ </span>{TRANSLATED.EXPAND_ALL}
-  </button>
-  <button
+    <span aria-hidden="true">+</span> {TRANSLATED.EXPAND_ALL}
+  </Button>
+  <Button
+    small
     disabled={!someExpanded}
     on:click={collapseAll}>
-    <span aria-hidden="true">— </span>{TRANSLATED.COLLAPSE_ALL}
-  </button>
+    <span aria-hidden="true">—</span> {TRANSLATED.COLLAPSE_ALL}
+  </Button>
 </div>
 
 <script>
   import { onMount, getContext } from "svelte";
+
+  import Button from "./Button/Button.svelte";
 
   const { translate } = getContext('app');
 

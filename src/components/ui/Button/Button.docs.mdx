@@ -1,0 +1,43 @@
+{/* Button.docs */}
+import { Canvas, Controls, Meta, Story, Source } from '@storybook/blocks';
+
+import * as ButtonStories from './Button.stories.svelte';
+
+<Meta title="UI/Button/README" />
+
+# Buttons
+
+The Button is a user interface that can be clicked.
+It emits a click event.
+The Button is used for all actions, except for navigation, started by the user.
+To navigate, use the Link.
+
+## Default Button
+
+The Default Button must at least have a label, which can added with some textcontent.
+
+<Canvas of={ButtonStories.Default} />
+<Controls of={ButtonStories.Default} />
+
+## Variants
+
+Basicly there is the Primary Button and the Secondary Button.
+The Button has a Small, or condensed, variant.
+
+<Canvas>
+    <Story of={ButtonStories.Primary} />
+    <Story of={ButtonStories.Secondary} />
+</Canvas>
+
+The Secondary Button is the default Button.
+
+There can be only one Primary Button within a Context.
+
+There can be multiple contexts for the Button within a Page.
+
+The Page is always the Primary Context.
+
+Nested contexts have Small Buttons of which only one is a Primary Small Button.
+
+
+

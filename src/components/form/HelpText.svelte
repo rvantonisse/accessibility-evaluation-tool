@@ -1,62 +1,39 @@
 <!--
- * @component
- * HelpText
- * @property label <String|@html>
- * @slot Detail contents
- * -->
-<div class="HelpText information" >
-  <div class="HelpText__label">
-    {@html labelHTML}
-    <button 
-      type="button" 
-      on:click={toggle} 
-      class="button button-small showhidebutton"
-      aria-expanded="{open}"
-      aria-label={`${buttonText} ${TRANSLATED.FOR} ${label}`}
-    >
-     {@html buttonText} 
-    </button>
-  </div>
-   {#if open}
-  <div class="HelpText__body">
-    <slot />
-  </div>
-  {/if}
-</div>
- <!-- /component -->
+@component
+
+# HelpText
+
+- property {string} label
+- slot Detail contents
+-->
+<Details summary="{TRANSLATED.HELPTEXT_TOGGLE}" bind:open="{open}">
+  <slot />
+</Details>
+
+<!-- /component -->
 
 <style>
-/* REMOVED */
+  /* REMOVED */
 </style>
 
 <script>
   import { getContext } from 'svelte';
+  import Details from '@app/components/ui/Details/Details.svelte';
 
-  export let label;
-  export let labelHTML;
   export let open = false;
-
-  function toggle() {
-    open = !open;
-  }
-
-  $: buttonText = open ? TRANSLATED.HIDE_INFO : TRANSLATED.SHOW_INFO;
 
   const { translate } = getContext('app');
 
   $: TRANSLATED = {
-    HIDE_INFO: $translate('UI.COMMON.BUTTON.HIDE', {
-      default: 'Hide {subject}',
-      values: {
-        subject: $translate('UI.COMMON.BUTTON.INFO', { default: 'info' })
+    HELPTEXT_TOGGLE: $translate(
+      open ? 'UI.COMMON.BUTTON.HIDE' : 'UI.COMMON.BUTTON.SHOW',
+      {
+        default: open ? 'Hide {subject}' : 'Show {subject}',
+        values: {
+          subject: $translate('UI.COMMON.BUTTON.INFO', { default: 'info' })
+        }
       }
-    }),
-    SHOW_INFO: $translate('UI.COMMON.BUTTON.SHOW', {
-      default: 'Show {subject}',
-      values: {
-        subject: $translate('UI.COMMON.BUTTON.INFO')
-      }
-    }),
+    ),
     FOR: $translate('UI.COMMON.FOR')
   };
 </script>

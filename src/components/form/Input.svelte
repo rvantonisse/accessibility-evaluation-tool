@@ -8,7 +8,7 @@
 
 <script>
   import { onMount } from 'svelte';
-  import Field from './Field.svelte';
+  import Field from './Field/Field.svelte';
 
   export let id;
   export let value = '';

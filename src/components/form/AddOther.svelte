@@ -1,16 +1,8 @@
 <!--
- * @component
- * ListInput
- * A customizable forminput that receives
- * a value as array with either a string or an object.
- * a format of how to add a list item which is
- * an array of objects containing:
- * - required label
- * - required type; text | textarea | select | checkbox(group)
- * - optional helptext
- * - optional ...any; required props to pass on to specific formcomponents
- *
- * -->
+ @component
+ 
+ # AddOther
+ -->
 
 <div class="AddOther__container">
   <div
@@ -20,7 +12,7 @@
   >
     <slot />
   </div>
-  <Button type="secondary" on:click="{handleAddClick}">{label}</Button>
+  <Button on:click="{handleAddClick}">{label}</Button>
 </div>
 
 <style>

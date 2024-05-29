@@ -1,6 +1,6 @@
 <Field id="{id}" label="{label}" helptext="{helptext}" className="{className}">
-  <textarea id="{id}" rows="{contentBasedRows}" bind:value on:change></textarea>
-  <slot name="after-textarea" />
+  <textarea id="{id}" rows="{contentBasedRows}" bind:value="{value}" on:change
+  ></textarea>
 </Field>
 
 <style>
@@ -8,7 +8,7 @@
 </style>
 
 <script>
-  import Field from './Field.svelte';
+  import Field from './Field/Field.svelte';
 
   const defaultRows = 5;
   let contentBasedRows;

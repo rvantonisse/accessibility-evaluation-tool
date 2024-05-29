@@ -16,7 +16,9 @@
     {#if label}
       {label}
     {:else}
-      {$translate('PAGES.AUDIT.RESULTS_FOR')}: {subject.title || subject.description || `subject ${subject.ID}`}
+      {$translate('PAGES.AUDIT.RESULTS_FOR')}: {subject.title ||
+        subject.description ||
+        `subject ${subject.ID}`}
     {/if}
   </legend>
 
@@ -35,16 +37,18 @@
       bind:value="{_assertion.result.description}"
       on:change="{handleResultChange}"
       className="Criterion__Observation"
+    />
+    <Link
+      to="{`/evaluation/view-report#criterion-${_assertion.test.num.replaceAll(
+        '.',
+        ''
+      )}`}">{TRANSLATED.VIEW_IN_REPORT}</Link
     >
-      <span slot="after-textarea" class="view-in-report">
-      <Link to={`/evaluation/view-report#criterion-${_assertion.test.num.replaceAll('.', '')}`}>{TRANSLATED.VIEW_IN_REPORT}</Link>
-      </span>
-    </Textarea>
   </div>
 </fieldset>
 
 <style>
-/* REMOVED */
+  /* REMOVED */
 </style>
 
 <script>

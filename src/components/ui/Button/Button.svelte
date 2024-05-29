@@ -1,41 +1,26 @@
 <!-- 
   @component
-  Button  Dispatches an on:click event.
+  Button
+  Dispatches an on:click event.
  -->
-{#if fake}
-  <span class="{classNames}">
-    {#if label}
-      {label}
-    {:else}
-      <slot />
-    {/if}
-  </span>
-{:else}
-  <button type="button" class="{classNames}" on:click>
-    {#if label}
-      {label}
-    {:else}
-      <slot />
-    {/if}
-  </button>
-{/if}
+<button
+  type="{type}"
+  class="Button"
+  class:primary="{primary}"
+  class:small="{small}"
+  on:click
+  {...$$restProps}
+>
+  <slot />
+</button>
 
 <style>
-  /* REMOVED */
+  @import "./styles.css";
 </style>
 
 <script>
-  export let type = 'primary';
-  export let fake = false;
+  /** @type {("button"|"submit")} */
+  export let type = 'button';
   export let small = false;
-  export let label;
-
-  $: classNames = [
-    'Button',
-    `Button--${type}`,
-    small ? 'Button--small' : '',
-    'button',
-    `button-${type}`,
-    small ? 'button-small' : ''
-  ].join(' ');
+  export let primary = false;
 </script>

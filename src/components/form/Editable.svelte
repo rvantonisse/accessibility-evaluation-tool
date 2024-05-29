@@ -1,26 +1,24 @@
 <div class="Editable">
   <div class="Editable__Contents">
     {#if removable}
-    <button
-      type="button"
-      class="Editable__Control--delete"
+    <Button
+      small
       on:click="{dispatchDelete}"
     >
      <span class="visually-hidden">{TRANSLATED.DELETE} {label}</span>
-    </button>
+    </Button>
     {/if}    
     <slot />
   </div>
 
   <div class="Editable__Controls">
     {#if !persistent}
-      <button
-        type="button"
-        class="Editable__Control--edit button-secondary"
+      <Button
+        small
         on:click="{handleEditClick}"
         bind:this="{EditToggle}"
       >{#if editing}Done{:else}Edit{/if}
-        <span class="visually-hidden">{label}</span></button>
+        <span class="visually-hidden">{label}</span></Button>
     {/if}
   </div>
 </div>
@@ -37,6 +35,7 @@
 
 <script>
   import { getContext, createEventDispatcher } from 'svelte';
+  import Button from '@app/components/ui/Button/Button.svelte';
 
   export let id = '';
   export let label = '';

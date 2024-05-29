@@ -2,27 +2,7 @@
  * @component
  *   SampleInput
  * -->
-<fieldset id="{id}">
-  <legend>
-    {label}
-    {#if helptext}
-      <button
-        type="button"
-        on:click="{toggle}"
-        class="button button-small showhidebutton"
-        aria-expanded="{showHelptext}"
-        aria-controls="{`field-helptext-${id}`}"
-        aria-label="{`${TRANSLATED.SHOW_HIDE_HELPTEXT} ${TRANSLATED.FOR} ${label}`}"
-      >
-        {TRANSLATED.SHOW_HIDE_HELPTEXT}
-      </button>
-      {#if showHelptext}
-        <div class="SampleInput__helptext" id="{`field-helptext-${id}`}">
-          {@html helptext}
-        </div>
-      {/if}
-    {/if}
-  </legend>
+<Fieldset id="{id}" legend="{label}" helptext="{helptext}">
   <slot />
 
   {#if value.length > 0}
@@ -43,7 +23,7 @@
   {/if}
 
   <AddOther label="{TRANSLATED.ADD_PAGE_BUTTON}" on:ADD="{handleSampleAdd}" />
-</fieldset>
+</Fieldset>
 <!-- /component -->
 
 <style>
@@ -58,6 +38,7 @@
   } from '@app/stores/earl/subjectStore/index.js';
 
   import AddOther from '@app/components/form/AddOther.svelte';
+  import Fieldset from '../Fieldset/Fieldset.svelte';
   import Sample from './Sample.svelte';
 
   export let id;
@@ -66,7 +47,6 @@
   export let value = [];
 
   let valueContainer;
-  let showHelptext = false;
   const { translate } = getContext('app');
 
   $: TRANSLATED = {
@@ -74,19 +54,8 @@
     ADD_PAGE_BUTTON: $translate('PAGES.SAMPLE.BTN_ADD_PAGE'),
     DELETE_CONFIRM: $translate('PAGES.SAMPLE.DELETE_CONFIRM'),
     SHOW_INFO_BUTTON: $translate('UI.COMMON.BUTTON.INFO'),
-    SHOW_HIDE_HELPTEXT: showHelptext
-      ? $translate('UI.COMMON.BUTTON.HIDE', {
-          values: { subject: $translate('UI.COMMON.BUTTON.INFO') }
-        })
-      : $translate('UI.COMMON.BUTTON.SHOW', {
-          values: { subject: $translate('UI.COMMON.BUTTON.INFO') }
-        }),
     FOR: $translate('UI.COMMON.FOR')
   };
-
-  function toggle() {
-    showHelptext = !showHelptext;
-  }
 
   function handleSampleAdd() {
     const newSample = subjects.create({
