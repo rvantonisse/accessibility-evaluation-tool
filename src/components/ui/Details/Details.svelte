@@ -8,7 +8,11 @@ Discloses additional information.
  -->
 
 <details class="Details" bind:open="{open}">
-  <summary role="button" class="Button small">{summary}</summary>
+  <!--
+    svelte-ignore a11y-no-redundant-roles
+    Button role and explicit aria-expanded state on summary necasary for consistency and a11y support
+  /-->
+  <summary role="button" class="Button small" aria-expanded="{open}">{summary}</summary>
 
   <div class="Details_contents">
     <slot />
