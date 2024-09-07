@@ -10,3 +10,7 @@ test.each([
 ])("Slugify text '%s' into '%s'", async (plainText, slugified) => {
     expect(slugify(plainText)).toEqual(slugified);
 });
+
+test("Slugify should return non string value", async () => {
+    expect(slugify(7331)).toEqual(7331);
+})
